@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserContext from './context/UserContext';
 
 import Header from './components/comun/NavBar';
-import NavBarAdmin from './components/administrador/NavBarAdmin';
+import NavBarEmpresa from './components/administrador/NavBarEmpresa'
 import NavBarCliente from './components/cliente/NavBarCliente';
 import NavBarDomiciliario from './components/domiciliario/NavBarDomiciliario'
 
@@ -14,20 +14,6 @@ import AdminDash from './components/administrador/AdminDash';
 import GestionProductos from './components/administrador/productos/GestionProductos';
 import RegistroProductos from './components/administrador/productos/RegistroProductos';
 import EditarProducto from './components/administrador/productos/EdicionProducto';
-
-import GestionUsuarios from './components/administrador/usuarios/GestionUsuarios';
-import RegistroEmpleado from './components/administrador/usuarios/RegistroEmpleados';
-import EditarUsuario from './components/administrador/usuarios/EdicionUsuarios';
-
-import GestionProveedores from './components/administrador/proveedores/GestionProveedores';
-import RegistroProveedor from './components/administrador/proveedores/RegistroProveedores';
-import EditarProveedor from './components/administrador/proveedores/EdicionProveedores';
-
-import GestionPedidos from './components/administrador/pedidos/PedidosAdmin'
-
-import GestionVentas from './components/administrador/ventas/GestionVentas';
-import RegistroVenta from './components/administrador/ventas/RegistroVentas';
-import ConfirmacionVenta from './components/administrador/ventas/ConfirmacionVenta';
 
 import ClienteDashboard from './components/cliente/ClienteDash';
 
@@ -57,7 +43,7 @@ const App = () => {
   let NavBarComponent = Header; // Valor por defecto
 
   if (role === 'administrador') {
-    NavBarComponent = NavBarAdmin;
+    NavBarComponent = NavBarEmpresa;
   } else if (role === 'cliente'){
     NavBarComponent = NavBarCliente;
   } else if (role === 'domiciliario'){
@@ -83,21 +69,6 @@ const App = () => {
           <Route path="/gestion-productos" element={<GestionProductos />} />
           <Route path="/registro-productos" element={<RegistroProductos />} />
           <Route path="/editar-producto/:id" element={<EditarProducto />} />
-
-          <Route path="/gestion-usuarios" element={<GestionUsuarios />} />  
-          <Route path="/registro-empleado" element={<RegistroEmpleado />} />   
-          <Route path="/editar-usuario/:id" element={<EditarUsuario />} /> 
-          
-          <Route path="/gestion-proveedores" element={<GestionProveedores />} /> 
-          <Route path="/registro-proveedor" element={<RegistroProveedor />} />      
-          <Route path="/editar-proveedor/:id" element={<EditarProveedor />} /> 
-
-          <Route path="/gestion-pedidos" element={<GestionPedidos />} /> 
-
-          <Route path="/gestion-ventas" element={<GestionVentas />} /> 
-          <Route path="/registro-venta" element={<RegistroVenta />} />
-          <Route path="/confirmar-venta" element={<ConfirmacionVenta />} />
-
 
 
           <Route path="/cliente-dash" element={<ClienteDashboard />} />

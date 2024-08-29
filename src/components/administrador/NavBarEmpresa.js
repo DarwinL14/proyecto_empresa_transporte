@@ -4,7 +4,7 @@ import UserContext from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/Logo.png';
 
-const HeaderAdmin = () => {
+const HeaderEmpresa = () => {
     const { logout } = useContext(UserContext);
     const navigate = useNavigate();
 
@@ -64,4 +64,4 @@ const HeaderAdmin = () => {
     );
 };
 
-export default HeaderAdmin;
+export default HeaderEmpresa;

@@ -40,9 +40,6 @@ const Login = () => {
                         case 'cliente':
                             navigate('/cliente-dash');
                             break;
-                        case 'cajero':
-                            navigate('/cajero-dash');
-                            break;
                         case 'domiciliario':
                             navigate('/domiciliario-dash');
                             break;
